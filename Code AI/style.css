@@ -1,0 +1,154 @@
+.logo {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 3vw;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+body {
+    margin: 0;
+    background-color: rgb(13, 13, 13);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.title {
+    color: whitesmoke;
+}
+
+.inputcontainer {
+    position: fixed;
+    bottom: 5vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    gap: 3%;
+
+    width: 60vw;
+    height: 9vh;
+    background-color: rgb(36, 36, 36);
+    border-radius: 9999px;
+}
+
+.input {
+    width: 80%;
+    height: 80%;
+    background-color: rgb(24, 24, 24);
+
+    appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 9999px;
+    color: whitesmoke;
+    resize: none;
+
+    padding-left: 2vw;
+}
+
+.sendbtn {
+    background-color: rgb(24, 24, 24);
+    width: 15%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    color: whitesmoke;
+}
+
+.objlist {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    align-items: flex-start;
+    padding-bottom: 15vh;
+}
+
+.resbox {
+    align-self: flex-start;
+    background-color: rgb(30, 30, 30);
+    max-width: 40vw;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.userbox {
+    align-self: flex-end;
+    background-color: rgb(53, 53, 53);
+    max-width: 40vw;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.resmsg {
+    color: whitesmoke;
+    margin: 0;
+    font-size: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.usermsg {
+    color: whitesmoke;
+    margin: 0;
+    font-size: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.right {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    margin-left: 20vw;
+}
+
+.left {
+    position: fixed;
+    width: 20vw;
+    min-height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(4, 4, 4);
+}
+
+.aiselecttext {
+    color: whitesmoke;
+}
+
+.apikeytext {
+    color: whitesmoke;
+}
+
+.apikeyinput {
+
+    background-color: rgb(38, 38, 38);
+
+    appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: whitesmoke;
+    resize: none;
+}
