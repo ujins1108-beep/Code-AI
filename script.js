@@ -13,7 +13,9 @@ apikeyinput.addEventListener("input", () => {
 let question = null;
 let response = null;
 
-let AI = "gemini";
+let AI = null;
+
+AI = "gemini";
 
 aiselect.addEventListener("change", () => {
     AI = aiselect.value;
