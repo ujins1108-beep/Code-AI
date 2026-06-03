@@ -42,6 +42,11 @@ async function groqfetch() {
     objlist.appendChild(userbox)
     userbox.appendChild(usermsg)
 
+    history.push({
+        "role": "user",
+        "content": question
+    })
+
     input.value = "생각중..."
 
     response = await fetch(
@@ -66,7 +71,11 @@ async function groqfetch() {
     let data = await response.json()
     let restext = data.choices[0].message.content;
     console.log(restext)
-    history.push(restext)
+
+    history.push({
+        "role": "AI",
+        "content": restext
+    })
     console.log(history)
 
     input.value = ""
@@ -90,6 +99,11 @@ async function geminifetch() {
     usermsg.textContent = question
     objlist.appendChild(userbox)
     userbox.appendChild(usermsg)
+
+    history.push({
+        "role": "user",
+        "content": question
+    })
 
     input.value = "생각중..."
 
@@ -119,7 +133,11 @@ async function geminifetch() {
     let data = await response.json()
     let restext = data.candidates[0].content.parts[0].text;
     console.log(restext)
-    history.push(restext)
+    
+    history.push({
+        "role": "AI",
+        "content": restext
+    })
     console.log(history)
 
     input.value = ""
