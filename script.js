@@ -62,7 +62,7 @@ async function groqfetch() {
             body: JSON.stringify({
                 model: "llama-3.1-8b-instant",
                 messages: [
-                    { role: "user", content: question }
+                    { role: "user", content: history }
                 ]
             })
         }
@@ -121,7 +121,7 @@ async function geminifetch() {
                     {
                         parts: [
                             {
-                                text: question
+                                text: history
                             }
                         ]
                     }
