@@ -66,7 +66,7 @@ async function groqfetch() {
     let data = await response.json()
     let restext = data.choices[0].message.content;
     console.log(restext)
-    history.push("restext")
+    history.push(restext)
     console.log(history)
 
     input.value = ""
@@ -119,7 +119,7 @@ async function geminifetch() {
     let data = await response.json()
     let restext = data.candidates[0].content.parts[0].text;
     console.log(restext)
-    history.push("restext")
+    history.push(restext)
     console.log(history)
 
     input.value = ""
