@@ -84,6 +84,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    flex-direction: column;
 }
 
 .userbox {
@@ -96,6 +97,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    flex-direction: column;
 }
 
 .resmsg {
@@ -104,9 +106,6 @@ body {
     font-size: 100%;
     white-space: pre-wrap;
     word-break: break-word;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .usermsg {
@@ -115,9 +114,6 @@ body {
     font-size: 100%;
     white-space: pre-wrap;
     word-break: break-word;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .right {

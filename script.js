@@ -157,11 +157,13 @@ async function geminifetch() {
 function streamingtext(element, text) {
     let textindex = 0
 
-    setInterval(() => {
+    let interval = setInterval(() => {
         if (textindex < text.length) {
             textindex ++
 
             element.innerHTML = marked.parse(text.slice(0, textindex))
+        } else {
+            clearInterval(interval);
         }
     }, 10)
 }
