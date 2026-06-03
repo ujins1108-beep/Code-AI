@@ -105,7 +105,9 @@ async function geminifetch() {
 
     geminihistory.push({
         "role": "user",
-        "content": question
+        "parts": [{
+            "text": question
+        }]
     })
 
     input.value = "생각중..."
