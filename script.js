@@ -15,7 +15,8 @@ let response = null;
 
 let AI = "gemini";
 
-let history = []
+let groqhistory = []
+let geminihistory = []
 
 aiselect.addEventListener("change", () => {
     AI = aiselect.value;
@@ -42,7 +43,7 @@ async function groqfetch() {
     objlist.appendChild(userbox)
     userbox.appendChild(usermsg)
 
-    history.push({
+    groqhistory.push({
         "role": "user",
         "content": question
     })
@@ -61,7 +62,7 @@ async function groqfetch() {
 
             body: JSON.stringify({
                 model: "llama-3.1-8b-instant",
-                messages: history
+                messages: groqhistory
             })
         }
     )
@@ -70,11 +71,11 @@ async function groqfetch() {
     let restext = data.choices[0].message.content;
     console.log(restext)
 
-    history.push({
-        "role": "AI",
+    groqhistory.push({
+        "role": "system",
         "content": restext
     })
-    console.log(history)
+    console.log(groqhistory)
 
     input.value = ""
 
@@ -85,6 +86,10 @@ async function groqfetch() {
     resmsg.textContent = restext
     objlist.appendChild(resbox)
     resbox.appendChild(resmsg)
+
+    if (groqhistory.length > 20) {
+        groqhistory = groqhistory.slice(-20);
+    }
 }
 
 async function geminifetch() {
@@ -98,7 +103,7 @@ async function geminifetch() {
     objlist.appendChild(userbox)
     userbox.appendChild(usermsg)
 
-    history.push({
+    geminihistory.push({
         "role": "user",
         "content": question
     })
@@ -119,7 +124,7 @@ async function geminifetch() {
                     {
                         parts: [
                             {
-                                text: history
+                                text: geminihistory
                             }
                         ]
                     }
@@ -132,11 +137,13 @@ async function geminifetch() {
     let restext = data.candidates[0].content.parts[0].text;
     console.log(restext)
     
-    history.push({
-        "role": "AI",
-        "content": restext
+    geminihistory.push({
+        "role": "model",
+        "parts": [{
+            "text": restext
+        }]
     })
-    console.log(history)
+    console.log(geminihistory)
 
     input.value = ""
 
@@ -147,4 +154,8 @@ async function geminifetch() {
     resmsg.textContent = restext
     objlist.appendChild(resbox)
     resbox.appendChild(resmsg)
+
+    if (geminihistory.length > 20) {
+        geminihistory = geminihistory.slice(-20);
+    }
 }
