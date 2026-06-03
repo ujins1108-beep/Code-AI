@@ -122,16 +122,8 @@ async function geminifetch() {
             },
 
             body: JSON.stringify({
-                contents: [
-                    {
-                        parts: [
-                            {
-                                text: geminihistory
-                            }
-                        ]
-                    }
-                ]
-        })
+                "contents": geminifetch
+            })
         }
     )
 
