@@ -163,5 +163,5 @@ function streamingtext(element, text) {
 
             element.textContent = text.slice(0, textindex)
         }
-    }, 10)
+    }, 50)
 }
