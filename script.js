@@ -36,7 +36,7 @@ async function groqfetch() {
     question = input.value;
 
     let userbox = document.createElement("div")
-    let usermsg = document.createElement("h1")
+    let usermsg = document.createElement("div")
     usermsg.classList.add("usermsg")
     userbox.classList.add("userbox")
     streamingtext(usermsg, question)
@@ -80,7 +80,7 @@ async function groqfetch() {
     input.value = ""
 
     let resbox = document.createElement("div")
-    let resmsg = document.createElement("h1")
+    let resmsg = document.createElement("div")
     resbox.classList.add("resbox")
     resmsg.classList.add("resmsg")
     streamingtext(resmsg, restext)
@@ -96,7 +96,7 @@ async function geminifetch() {
     question = input.value;
 
     let userbox = document.createElement("div")
-    let usermsg = document.createElement("h1")
+    let usermsg = document.createElement("div")
     usermsg.classList.add("usermsg")
     userbox.classList.add("userbox")
     streamingtext(usermsg, question)
@@ -142,7 +142,7 @@ async function geminifetch() {
     input.value = ""
 
     let resbox = document.createElement("div")
-    let resmsg = document.createElement("h1")
+    let resmsg = document.createElement("div")
     resbox.classList.add("resbox")
     resmsg.classList.add("resmsg")
     streamingtext(resmsg, restext)
@@ -161,7 +161,7 @@ function streamingtext(element, text) {
         if (textindex < text.length) {
             textindex ++
 
-            element.textContent = text.slice(0, textindex)
+            element.innerHTML = marked.parse(text.slice(0, textindex))
         }
-    }, 50)
+    }, 10)
 }

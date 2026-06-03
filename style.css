@@ -104,6 +104,9 @@ body {
     font-size: 100%;
     white-space: pre-wrap;
     word-break: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .usermsg {
@@ -112,6 +115,9 @@ body {
     font-size: 100%;
     white-space: pre-wrap;
     word-break: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .right {
@@ -151,4 +157,9 @@ body {
     box-shadow: none;
     color: whitesmoke;
     resize: none;
+}
+
+.resmsg *,
+.usermsg *{
+    margin: 0;
 }
