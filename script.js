@@ -122,7 +122,7 @@ async function geminifetch() {
             },
 
             body: JSON.stringify({
-                "contents": geminifetch
+                "contents": geminihistory
             })
         }
     )
