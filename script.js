@@ -39,7 +39,7 @@ async function groqfetch() {
     let usermsg = document.createElement("h1")
     usermsg.classList.add("usermsg")
     userbox.classList.add("userbox")
-    usermsg.textContent = question
+    streamingtext(usermsg, question)
     objlist.appendChild(userbox)
     userbox.appendChild(usermsg)
 
@@ -83,7 +83,7 @@ async function groqfetch() {
     let resmsg = document.createElement("h1")
     resbox.classList.add("resbox")
     resmsg.classList.add("resmsg")
-    resmsg.textContent = restext
+    streamingtext(resmsg, restext)
     objlist.appendChild(resbox)
     resbox.appendChild(resmsg)
 
@@ -99,7 +99,7 @@ async function geminifetch() {
     let usermsg = document.createElement("h1")
     usermsg.classList.add("usermsg")
     userbox.classList.add("userbox")
-    usermsg.textContent = question
+    streamingtext(usermsg, question)
     objlist.appendChild(userbox)
     userbox.appendChild(usermsg)
 
@@ -145,11 +145,23 @@ async function geminifetch() {
     let resmsg = document.createElement("h1")
     resbox.classList.add("resbox")
     resmsg.classList.add("resmsg")
-    resmsg.textContent = restext
+    streamingtext(resmsg, restext)
     objlist.appendChild(resbox)
     resbox.appendChild(resmsg)
 
     if (geminihistory.length > 20) {
         geminihistory = geminihistory.slice(-20);
     }
+}
+
+function streamingtext(element, text) {
+    let textindex = 0
+
+    setInterval(() => {
+        if (textindex < text.length) {
+            textindex ++
+
+            element.textContent = text.slice(0, textindex)
+        }
+    }, 10)
 }
