@@ -85,7 +85,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 999px;
+    border-radius: 5vh;
     flex-direction: column;
 }
 
@@ -98,7 +98,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 999px;
+    border-radius: 5vh;
     flex-direction: column;
 }
 
