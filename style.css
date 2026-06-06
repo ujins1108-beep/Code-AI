@@ -137,18 +137,37 @@ body {
     justify-content: center;
     flex-direction: column;
     background-color: rgb(4, 4, 4);
-    gap: 20vh;
+    gap: 10vh;
 }
 
 .aiselecttext {
     color: whitesmoke;
+    margin: 0;
 }
 
 .apikeytext {
     color: whitesmoke;
+    margin: 0;
+}
+
+.sysprompttext {
+    color: whitesmoke;
+    margin: 0;
 }
 
 .apikeyinput {
+
+    background-color: rgb(38, 38, 38);
+
+    appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: whitesmoke;
+    resize: none;
+}
+
+.syspromptinput {
 
     background-color: rgb(38, 38, 38);
 
@@ -174,9 +193,25 @@ body {
 }
 
 .apikeyinputbox {
-    gap: 2vh;
+    gap: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .aiselectbox {
-    gap: 2vh;
+    gap: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.syspromptbox {
+    gap: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

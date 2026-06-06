@@ -3,6 +3,7 @@ const sendbtn = document.querySelector(".sendbtn")
 const input = document.querySelector(".input")
 const apikeyinput = document.querySelector(".apikeyinput")
 const aiselect = document.querySelector(".aiselect")
+const syspromptinput = document.querySelector(".syspromptinput")
 
 let API_KEY = null;
 
@@ -18,8 +19,31 @@ let AI = "gemini";
 let groqhistory = []
 let geminihistory = []
 
-aiselect.addEventListener("change", () => {
+let groqsysprompt = [{
+    "role": "system",
+    "content": ""
+}]
+let geminisysprompt = {
+    parts: [{
+        text: ""
+    }]
+}
+
+aiselect.addEventListener("input", () => {
     AI = aiselect.value;
+})
+
+syspromptinput.addEventListener("input", () => {
+    groqsysprompt = [{
+        "role": "system",
+        "content": syspromptinput.value
+    }]
+
+    geminisysprompt = {
+        parts: [{
+            text: syspromptinput.value
+        }]
+    }
 })
 
 sendbtn.addEventListener("click", async () => {
@@ -62,7 +86,11 @@ async function groqfetch() {
 
             body: JSON.stringify({
                 model: "llama-3.1-8b-instant",
-                messages: groqhistory
+                messages: [
+                    ...groqsysprompt,
+                    ...groqhistory
+                ]
+
             })
         }
     )
@@ -122,6 +150,7 @@ async function geminifetch() {
             },
 
             body: JSON.stringify({
+                "systemInstruction": geminisysprompt,
                 "contents": geminihistory
             })
         }
