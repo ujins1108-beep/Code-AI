@@ -1,11 +1,11 @@
 .logo {
     position: fixed;
-    left: 0;
+    right: 0;
     bottom: 0;
     height: auto;
     width: 3vw;
-    margin-bottom: 1vh;
-    margin-left: 1vw;
+    margin-bottom: 2vh;
+    margin-right: 1vw;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
