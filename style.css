@@ -19,6 +19,7 @@ body {
 
 .title {
     color: whitesmoke;
+    height: 18vh;
 }
 
 .inputcontainer {
@@ -133,6 +134,7 @@ body {
     justify-content: center;
     flex-direction: column;
     background-color: rgb(4, 4, 4);
+    gap: 20vh;
 }
 
 .aiselecttext {
@@ -158,4 +160,20 @@ body {
 .resmsg *,
 .usermsg *{
     margin: 0;
+}
+
+.resmsg,
+.usermsg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.apikeyinputbox {
+    gap: 2vh;
+}
+
+.aiselectbox {
+    gap: 2vh;
 }
