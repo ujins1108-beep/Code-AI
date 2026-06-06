@@ -30,18 +30,16 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    gap: 3%;
+    gap: 2vw;
 
-    width: 60vw;
+    width: 50vw;
     height: 9vh;
     background-color: rgb(36, 36, 36);
     border-radius: 9999px;
 }
 
 .input {
-    width: 80%;
+    width: 81%;
     height: 80%;
     background-color: rgb(24, 24, 24);
 
@@ -58,13 +56,16 @@ body {
 
 .sendbtn {
     background-color: rgb(24, 24, 24);
-    width: 15%;
     height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
     color: whitesmoke;
+}
+
+.sendimg {
+    height: 90%;
 }
 
 .objlist {
