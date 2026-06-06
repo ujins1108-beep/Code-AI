@@ -72,7 +72,7 @@ async function groqfetch() {
     console.log(restext)
 
     groqhistory.push({
-        "role": "system",
+        "role": "assistant",
         "content": restext
     })
     console.log(groqhistory)
